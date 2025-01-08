@@ -9,8 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentIndex = 0;
     const MEALS_PER_PAGE = 5;
 
-    const fetchMeals = async (name) => {
-        const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`;
+    const fetchMeals = async (item) => {
+        const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${item}`;
         try {
             const response = await fetch(url);
             const data = await response.json();
@@ -31,8 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <h3>${meal.strMeal}</h3>
                     <p><strong>ID:</strong> ${meal.idMeal}</p>
                     <p>${meal.strInstructions.slice(0, 100)}...</p>
-                </div>
-            `;
+                </div>`;
             mealResults.appendChild(mealCard);
         });
 
@@ -42,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const toggleShowMoreButton = () => {
         if (currentIndex >= allMeals.length) {
-            showMoreContainer.style.display = "none"; 
+            showMoreContainer.style.display = "none";
         } else {
             showMoreContainer.style.display = "block";
         }
@@ -57,13 +56,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         allMeals = await fetchMeals(query);
         currentIndex = 0; 
-        mealResults.innerHTML = ""; 
+        mealResults.innerHTML = "";
 
         if (allMeals.length > 0) {
-            renderMeals(); 
+            renderMeals();
         } else {
             mealResults.innerHTML = "<p>No meals found. Try another search.</p>";
-            showMoreContainer.style.display = "none"; 
+            showMoreContainer.style.display = "none";
         }
     });
 
