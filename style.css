@@ -7,7 +7,7 @@ body {
 
 
 header {
-    background-color: #ff5722;
+    background-color: #685c3f;
     color: #fff;
     padding: 20px;
     text-align: center;
@@ -49,7 +49,7 @@ main {
 #search-btn {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #e9a908;
+    background-color: #6a592c;
     color: white;
     border: none;
     border-radius: 5px;
@@ -57,7 +57,7 @@ main {
 }
 
 #search-btn:hover {
-    background-color: #e64a19;
+    background-color: #5b291a;
 }
 
 .meal-container {
@@ -109,7 +109,7 @@ main {
 #show-more-btn {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #ff5722;
+    background-color: #421f14;
     color: white;
     border: none;
     border-radius: 5px;
@@ -117,7 +117,7 @@ main {
 }
 
 #show-more-btn:hover {
-    background-color: #e64a19;
+    background-color: #49271d;
 }
 
 @media screen and (max-width: 600px) {
